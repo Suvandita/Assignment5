@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin label(){
+    display: block;
+    padding: 0 0 10px;
+}
+@mixin input(){
+    width:100%;
+    padding:10px;
+}
+.error{
+    display: none;
+    color:red;
+}
+
+.main{
+    padding:5% 25%;
+    &__heading{
+        padding:0 0 25px;
+        width:100%;
+    }
+    &__form{
+        width:100%;
+        padding:0 0 25px;
+        &__message{
+            &__label{
+                @include label();
+            }
+            &__input{
+                height:150px;
+                @include input();
+            }
+            
+        }
+        &__name{
+            padding:0 0 25px;
+            &__label{
+                @include label();
+            }
+            &__input{
+                @include input();
+            }
+        }
+        &__1{
+            display: flex;
+            gap:25px;
+            padding:0 0 25px;
+            &__country{
+                &__label{
+                    @include label();
+                }
+                width: 50%;
+                &__input{
+                    @include input();
+                }
+            }
+            &__pincode{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input();
+                }
+            }
+
+        }
+        &__2{
+            display: flex;
+            gap:25px;
+            padding:0 0 25px;
+            &__email{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input();
+                }
+            }
+            &__phone{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input();
+                }
+            }
+
+        }
+        &__submit{
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 10px;
+            border: 1px solid grey;
+            color:grey;
+        }
+    }
+}

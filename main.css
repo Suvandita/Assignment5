@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error {
+  display: none;
+  color: red;
+}
+
+.main {
+  padding: 5% 25%;
+}
+.main__heading {
+  padding: 0 0 25px;
+  width: 100%;
+}
+.main__form {
+  width: 100%;
+  padding: 0 0 25px;
+}
+.main__form__message__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__message__input {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+}
+.main__form__name {
+  padding: 0 0 25px;
+}
+.main__form__name__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__name__input {
+  width: 100%;
+  padding: 10px;
+}
+.main__form__1 {
+  display: flex;
+  gap: 25px;
+  padding: 0 0 25px;
+}
+.main__form__1__country {
+  width: 50%;
+}
+.main__form__1__country__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__1__country__input {
+  width: 100%;
+  padding: 10px;
+}
+.main__form__1__pincode {
+  width: 50%;
+}
+.main__form__1__pincode__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__1__pincode__input {
+  width: 100%;
+  padding: 10px;
+}
+.main__form__2 {
+  display: flex;
+  gap: 25px;
+  padding: 0 0 25px;
+}
+.main__form__2__email {
+  width: 50%;
+}
+.main__form__2__email__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__2__email__input {
+  width: 100%;
+  padding: 10px;
+}
+.main__form__2__phone {
+  width: 50%;
+}
+.main__form__2__phone__label {
+  display: block;
+  padding: 0 0 10px;
+}
+.main__form__2__phone__input {
+  width: 100%;
+  padding: 10px;
+}
+.main__form__submit {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border: 1px solid grey;
+  color: grey;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Assignment 5</title>
+</head>
+<body>
+    <div class="main">
+        <h1 class="main__heading">Write to us</h1>
+        <form onsubmit="submit()" class="main__form">
+            <div class="main__form__message">
+                <label class="main__form__message__label">Your message</label> 
+                <textarea class="main__form__message__input input_class" required onclick="error('main__form__message')" onkeyup="error_rem('main__form__message')"></textarea>
+                <div class="error">This field cannot be empty</div>
+            </div>
+            <div class="main__form__name">
+                <label class="main__form__name__label">Name</label>
+                <input class="main__form__name__input input_class" type="text" required placeholder="Full Name" onclick="error('main__form__name')" onkeyup="error_rem('main__form__name')">
+                <div class="error">This field cannot be empty</div>            
+            </div>
+            <div class="main__form__1">
+                <div class="main__form__1__country">
+                    <label class="main__form__1__country__label">Country</label>
+                    <select class="main__form__1__country__input input_class" required onclick="error('main__form__1__country')" onselect="error_rem('main__form__1__country')">
+                        <option value="india" selected>India</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="korea">Korea</option>
+                    </select>
+                    <div class="error">This field cannot be empty</div>                
+                </div>
+                <div class="main__form__1__pincode">
+                    <label class="main__form__1__pincode__label">Pincode</label>
+                    <input class="main__form__1__pincode__input input_class" type="number" required placeholder="Enter pincode" onclick="error('main__form__1__pincode')" onkeyup="error_rem('main__form__1__pincode')">
+                    <div class="error">This field cannot be empty</div>
+                </div>
+
+            </div>
+            <div class="main__form__2">
+                <div class="main__form__2__email">
+                    <label class="main__form__2__email__label">Email</label>
+                    <input class="main__form__2__email__input input_class" type="email" required placeholder="Enter email" onclick="error('main__form__2__email')" onkeyup="error_rem('main__form__2__email')">
+                    <div class="error">This field cannot be empty</div>
+                </div>
+                <div class="main__form__2__phone">
+                    <label class="main__form__2__phone__label">Phone Number</label>
+                    <input class="main__form__2__phone__input input_class" type="tel" pattern="[0-9]{10}" required placeholder="Enter phone number" onclick="error('main__form__2__phone')" onkeyup="error_rem('main__form__2__phone')">
+                    <div class="error">This field cannot be empty</div>
+                </div>
+
+            </div>
+            
+            <input type="submit" value="Submit" class="main__form__submit">
+        </form>
+    </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>
