@@ -24,7 +24,18 @@
   display: block;
   padding: 0 0 10px;
 }
-.main__form__message__input {
+.main__form__message__wrap {
+  border: 1px solid rgb(118, 118, 118);
+}
+.main__form__message__wrap__subject {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+}
+.main__form__message__wrap__input {
+  border: none;
   height: 150px;
   width: 100%;
   padding: 10px;
@@ -101,4 +112,19 @@
   padding: 10px 10px;
   border: 1px solid grey;
   color: grey;
+}
+
+@media screen and (max-width: 1000px) {
+  .main__form__1 {
+    flex-direction: column;
+  }
+  .main__form__1__country, .main__form__1__pincode {
+    width: 100%;
+  }
+  .main__form__2 {
+    flex-direction: column;
+  }
+  .main__form__2__email, .main__form__2__phone {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

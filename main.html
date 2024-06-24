@@ -9,11 +9,21 @@
 <body>
     <div class="main">
         <h1 class="main__heading">Write to us</h1>
-        <form onsubmit="submit()" class="main__form">
+        <form onsubmit="validate()" class="main__form" onchange="change_colour()">
             <div class="main__form__message">
-                <label class="main__form__message__label">Your message</label> 
-                <textarea class="main__form__message__input input_class" required onclick="error('main__form__message')" onkeyup="error_rem('main__form__message')"></textarea>
-                <div class="error">This field cannot be empty</div>
+                <label class="main__form__message__label">Your message</label>
+
+
+                <div class="main__form__message__wrap">
+                    <input type="text" class="main__form__message__wrap__subject" placeholder="Request for interview" maxlength="75">
+                    <hr>
+                    <textarea class="main__form__message__wrap__input input_class" required maxlength="500">Hello, 
+I am Suvandita Swaroop"</textarea>
+                    <div class="error">This field cannot be empty</div>         
+                </div>
+                
+                
+                
             </div>
             <div class="main__form__name">
                 <label class="main__form__name__label">Name</label>
@@ -23,8 +33,9 @@
             <div class="main__form__1">
                 <div class="main__form__1__country">
                     <label class="main__form__1__country__label">Country</label>
-                    <select class="main__form__1__country__input input_class" required onclick="error('main__form__1__country')" onselect="error_rem('main__form__1__country')">
-                        <option value="india" selected>India</option>
+                    <select class="main__form__1__country__input input_class" required onclick="error('main__form__1__country')" onchange="error_rem('main__form__1__country')">
+                        <option value="" selected>Select option</option>
+                        <option value="india">India</option>
                         <option value="usa">USA</option>
                         <option value="uk">UK</option>
                         <option value="korea">Korea</option>
