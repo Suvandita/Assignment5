@@ -1,11 +1,42 @@
+/*counter for my subject*/
+let mytext=document.querySelector(".main__form__message__wrap__input");
+let counter=document.querySelector(".counter");
+let limit=500;
+counter.textContent='30/500';
+mytext.addEventListener("input", function(){
+    var text_len=mytext.value.length;
+    counter.textContent=text_len+'/'+limit;
+    if(text_len==500){
+        counter.style.color="red";
+    }
+
+})
+
+/*empty validations for message field */
+function error_msg(x){
+    let val=document.querySelectorAll('.'+x+'> .input_class');
+    if((val[0].value=="") || (val[1].value=="")){
+        document.querySelector('.main__form__message .error').style.display='block';
+    }
+}
+function error_rem_msg(x){
+    let val=document.querySelectorAll('.'+x+'> .input_class');
+    let val_0=val[0].value.length;
+    let val_1=val[1].value.length;
+    if((val_0>0) && (val_1>0)){
+        document.querySelector('.main__form__message .error').style.display='none';
+    }
+}
+
+/*empty validations for all fields except message*/
 function error(x){
     let val=document.querySelector('.'+x+'__input').value;
-    if(val=="" ||val==NULL){
+    if(val==""){
         document.querySelector('.'+x+'> .error').style.display='block';
     }
-   
-    
 }
+
+
 function error_rem(x){
     let val=document.querySelector('.'+x+'__input').value;
     if(val.length>0){
@@ -16,19 +47,14 @@ function error_rem(x){
 
 
 let inputs=document.querySelectorAll(".input_class");
-
-const input1=document.querySelector(".main__form__message__input");
-const input2=document.querySelector(".main__form__name__input");
-const input3=document.querySelector(".main__form__1__country__input");
-const input4=document.querySelector(".main__form__1__pincode__input");
-const input5=document.querySelector(".main__form__2__email__input");
-const input6=document.querySelector(".main__form__2__phone__input");
+const input_email=document.querySelector(".main__form__2__email__input");
+const input_phone=document.querySelector(".main__form__2__phone__input");
 
 
-
+/*email validations*/
 const validate_email=function (){
-    let val=input5.value;
-    let parent=input5.parentElement.className;
+    let val=input_email.value;
+    let parent=input_email.parentElement.className;
     let error_msg=document.querySelector('.'+parent+"> .error");
     if(val.indexOf('@')!=-1 && val.length>1){
         error_msg.style.display="none";
@@ -38,13 +64,13 @@ const validate_email=function (){
         error_msg.innerHTML="Please enter a valid email id";
     }
 }
-input5.addEventListener("keyup",validate_email);
+input_email.addEventListener("keyup",validate_email);
 
 
-
+/*phone validations*/
 const validate_phone=function (){
-    let val=input6.value;
-    let parent=input6.parentElement.className;
+    let val=input_phone.value;
+    let parent=input_phone.parentElement.className;
     let error_msg=document.querySelector('.'+parent+"> .error");
     if(val.length==10){
         error_msg.style.display="none";
@@ -54,98 +80,63 @@ const validate_phone=function (){
         error_msg.innerHTML="Please enter a valid phone number";
     }
 }
-input6.addEventListener("keyup",validate_phone);
-function change_colour(){
-    let flag=0;
-    for(let i=0;i<inputs.length;i++){
-        if(inputs[i].value==NULL ||inputs[i].value==""){
-            flag++;
+input_phone.addEventListener("keyup",validate_phone);
+
+/*submit button enable/disable */
+
+let errors=document.querySelectorAll('.error');
+function enable_submit(){
+    let flag=false;
+    for(let i=0;i<errors.length;i++){
+        if(errors[i].style.display=='none'){
+            flag=true;
+            
         }
-        
+        else{
+            flag=false;
+            return false;
+        }
     }
-    if(flag==0){
+    
+    /*errors.forEach((error_)=>{
+        if(error_.style.display=='none'){
+            flag=true;
+        }
+        else{
+            flag=false;
+        }
+    })*/
+    if(flag==true){
+        inputs.forEach((input)=>{
+            if(input.value.length>0){
+                flag=true;
+            }
+            else{
+                flag==false;
+                return false;
+            }
+        })
+    }
+    /*
+    if(flag==true){
+        for(let j=0;j<inputs.length;j++){
+            if(inputs[j].value.length>0){
+                flag=true;
+            }
+            else{
+                flag=false;}}}*/
+    if(flag==true){
         submit_button=document.querySelector(".main__form__submit");
         submit_button.style.color='blue';
-        /*submit_button.addEventListener("hover",function (){
+        submit_button.style.borderColor='blue';
+        submit_button.disabled=false;
+        submit_button.addEventListener("mouseover", function (){
             submit_button.style.cursor='pointer';
-        })*/
-    
+        })
+        
+      
     }
 }
-/*
-
-function validate(){
-    inputs.forEach((input)=>{
-        if(input.value==NULL ||input.value==""){
-           return false;
-        }
-    })
-    alert("Form is submitted");
-    return false;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-let count=0;
-inputs.forEach((each_input)=>{
-
-    each_input.addEventListener("click",function (count){
-
-        document.querySelectorAll('.error')[count].style.display='block';
-        
-    })
-    each_input.addEventListener("keyup", function (count){
-        document.querySelectorAll('.error')[count].style.display='none';
-       
-    })
-    count++;
-})*/
-/*
-for(let i=0;i<inputs.length;i++){
-    inputs[i].addEventListener("click",function (){
-
-        document.querySelectorAll('.error')[i].style.display='block';
-        
-    })
-    
-}
-for(let i=0;i<inputs.length;i++){
-    inputs[i].addEventListener("keyup", function (){
-        document.querySelectorAll('.error')[i].style.display='none';
-       
-    })
-    
-}
-*/
-
-/*
-function submit(){
-    let count=0;
-    inputs.forEach((each_input)=>{
-        if(each_input.value=="" || each_input.value=NULL){
-            count++;
-        }
-    })
-}*/
+inputs.forEach((input)=>{
+    input.addEventListener("keyup",enable_submit)
+})

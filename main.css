@@ -9,12 +9,25 @@
   color: red;
 }
 
+textarea:focus, input:focus, select:focus {
+  outline: none;
+}
+
+input, select {
+  border: 1px solid rgb(118, 118, 118);
+}
+
+textarea {
+  font-family: none;
+}
+
 .main {
-  padding: 5% 25%;
+  padding: 5% 10%;
 }
 .main__heading {
   padding: 0 0 25px;
   width: 100%;
+  font: 50px bold black;
 }
 .main__form {
   width: 100%;
@@ -26,19 +39,39 @@
 }
 .main__form__message__wrap {
   border: 1px solid rgb(118, 118, 118);
+  border-radius: 5px;
+  margin: 0 0 25px;
 }
 .main__form__message__wrap__subject {
   border: none;
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
   font-weight: bold;
   color: black;
 }
+.main__form__message__wrap__subject::-moz-placeholder {
+  color: black;
+}
+.main__form__message__wrap__subject::placeholder {
+  color: black;
+}
+.main__form__message__wrap hr {
+  width: 95%;
+  border-top: 1px solid rgb(118, 118, 118);
+  margin: 0 auto;
+}
 .main__form__message__wrap__input {
   border: none;
-  height: 150px;
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 150px;
+}
+.main__form__message__wrap .counter {
+  width: 100%;
+  text-align: right;
 }
 .main__form__name {
   padding: 0 0 25px;
@@ -50,6 +83,8 @@
 .main__form__name__input {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
 }
 .main__form__1 {
   display: flex;
@@ -66,6 +101,8 @@
 .main__form__1__country__input {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
 }
 .main__form__1__pincode {
   width: 50%;
@@ -77,6 +114,8 @@
 .main__form__1__pincode__input {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
 }
 .main__form__2 {
   display: flex;
@@ -93,6 +132,8 @@
 .main__form__2__email__input {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
 }
 .main__form__2__phone {
   width: 50%;
@@ -104,14 +145,17 @@
 .main__form__2__phone__input {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  height: 50px;
 }
 .main__form__submit {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 10px 10px;
-  border: 1px solid grey;
-  color: grey;
+  padding: 10px 15px;
+  border: 1px solid rgb(118, 118, 118);
+  color: rgb(118, 118, 118);
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 1000px) {

@@ -7,20 +7,33 @@
     display: block;
     padding: 0 0 10px;
 }
-@mixin input(){
+@mixin input($x){
     width:100%;
     padding:10px;
+    border-radius: 5px;
+    height: $x;
 }
 .error{
     display: none;
     color:red;
 }
+textarea:focus, input:focus, select:focus{
+    outline: none;
+}
+input, select{
+    border:1px solid rgb(118, 118, 118);
+}
+textarea{
+    font-family: none;
+}
+
 
 .main{
-    padding:5% 25%;
+    padding:5% 10%;
     &__heading{
         padding:0 0 25px;
         width:100%;
+        font:50px bold black ;
     }
     &__form{
         width:100%;
@@ -31,17 +44,30 @@
             }
             &__wrap{
                 border:1px solid rgb(118, 118, 118);
+                border-radius: 5px;
+                margin:0 0 25px;
                 &__subject{
                     border: none;
-                    @include input();
+                    @include input(50px);
                     font-weight: bold;
                     color:black;
-                
+                    &::placeholder{
+                        color:black;
+                    }
+                    
+                }
+                hr{
+                    width:95%;
+                    border-top:1px solid rgb(118, 118, 118);
+                    margin: 0 auto;
                 }
                 &__input{
                     border: none;
-                    height:150px;
-                    @include input();
+                    @include input(150px);
+                }
+                .counter{
+                    width: 100%;
+                    text-align:right;
                 }
             }
             
@@ -53,7 +79,7 @@
                 @include label();
             }
             &__input{
-                @include input();
+                @include input(50px);
             }
         }
         &__1{
@@ -66,7 +92,7 @@
                     @include label();
                 }
                 &__input{
-                    @include input();
+                    @include input(50px);
                 }
             }
             &__pincode{
@@ -75,7 +101,7 @@
                     @include label();
                 }
                 &__input{
-                    @include input();
+                    @include input(50px);
                 }
             }
 
@@ -90,7 +116,7 @@
                     @include label();
                 }
                 &__input{
-                    @include input();
+                    @include input(50px);
                 }
             }
             &__phone{
@@ -99,7 +125,7 @@
                     @include label();
                 }
                 &__input{
-                    @include input();
+                    @include input(50px);
                 }
             }
 
@@ -108,9 +134,10 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            padding: 10px 10px;
-            border: 1px solid grey;
-            color:grey;
+            padding: 10px 15px;
+            border:1px solid rgb(118, 118, 118);
+            color:rgb(118, 118, 118);
+            border-radius: 5px;
         }
     }
 }

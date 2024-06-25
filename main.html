@@ -9,20 +9,19 @@
 <body>
     <div class="main">
         <h1 class="main__heading">Write to us</h1>
-        <form onsubmit="validate()" class="main__form" onchange="change_colour()">
+        <form onsubmit="validate()" class="main__form">
             <div class="main__form__message">
                 <label class="main__form__message__label">Your message</label>
 
 
                 <div class="main__form__message__wrap">
-                    <input type="text" class="main__form__message__wrap__subject" placeholder="Request for interview" maxlength="75">
+                    <input type="text" class="main__form__message__wrap__subject input_class" placeholder="Request for interview" maxlength="75" onclick="error_msg('main__form__message__wrap')" onkeyup="error_rem_msg('main__form__message__wrap')">
                     <hr>
-                    <textarea class="main__form__message__wrap__input input_class" required maxlength="500">Hello, 
-I am Suvandita Swaroop"</textarea>
-                    <div class="error">This field cannot be empty</div>         
+                    <textarea class="main__form__message__wrap__input input_class" required maxlength="500" onclick="error_msg('main__form__message__wrap')" onkeyup="error_rem_msg('main__form__message__wrap')">Hello, 
+I am Suvandita Swaroop</textarea>     
+                        <p class="counter"></p>
                 </div>
-                
-                
+                <div class="error">Subject and Message field cannot be empty</div> 
                 
             </div>
             <div class="main__form__name">
@@ -63,7 +62,7 @@ I am Suvandita Swaroop"</textarea>
 
             </div>
             
-            <input type="submit" value="Submit" class="main__form__submit">
+            <input type="submit" value="Submit" class="main__form__submit" disabled>
         </form>
     </div>
     <script src="main.js"></script>
