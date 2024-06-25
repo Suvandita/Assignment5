@@ -11,10 +11,10 @@
         <h1 class="main__heading">Write to us</h1>
         <form onsubmit="validate()" class="main__form">
             <div class="main__form__message">
-                <label class="main__form__message__label">Your message</label>
+                <label for="message" class="main__form__message__label">Your message</label>
 
 
-                <div class="main__form__message__wrap">
+                <div class="main__form__message__wrap" id="message">
                     <input type="text" class="main__form__message__wrap__subject input_class" placeholder="Request for interview" maxlength="75" onclick="error_msg('main__form__message__wrap')" onkeyup="error_rem_msg('main__form__message__wrap')">
                     <hr>
                     <textarea class="main__form__message__wrap__input input_class" required maxlength="500" onclick="error_msg('main__form__message__wrap')" onkeyup="error_rem_msg('main__form__message__wrap')">Hello, 
@@ -25,14 +25,14 @@ I am Suvandita Swaroop</textarea>
                 
             </div>
             <div class="main__form__name">
-                <label class="main__form__name__label">Name</label>
-                <input class="main__form__name__input input_class" type="text" required placeholder="Full Name" onclick="error('main__form__name')" onkeyup="error_rem('main__form__name')">
+                <label for="name" class="main__form__name__label">Name</label>
+                <input id="name" class="main__form__name__input input_class" type="text" required placeholder="Full Name" onclick="error('main__form__name')" onkeyup="error_rem('main__form__name')">
                 <div class="error">This field cannot be empty</div>            
             </div>
             <div class="main__form__1">
                 <div class="main__form__1__country">
-                    <label class="main__form__1__country__label">Country</label>
-                    <select class="main__form__1__country__input input_class" required onclick="error('main__form__1__country')" onchange="error_rem('main__form__1__country')">
+                    <label for="country" class="main__form__1__country__label">Country</label>
+                    <select id="country" class="main__form__1__country__input input_class" required onclick="error('main__form__1__country')" onchange="error_rem('main__form__1__country')">
                         <option value="" selected>Select option</option>
                         <option value="india">India</option>
                         <option value="usa">USA</option>
@@ -42,21 +42,21 @@ I am Suvandita Swaroop</textarea>
                     <div class="error">This field cannot be empty</div>                
                 </div>
                 <div class="main__form__1__pincode">
-                    <label class="main__form__1__pincode__label">Pincode</label>
-                    <input class="main__form__1__pincode__input input_class" type="number" required placeholder="Enter pincode" onclick="error('main__form__1__pincode')" onkeyup="error_rem('main__form__1__pincode')">
+                    <label for="pincode" class="main__form__1__pincode__label">Pincode</label>
+                    <input id="pincode" class="main__form__1__pincode__input input_class" type="number" required placeholder="Enter pincode" onclick="error('main__form__1__pincode')" onkeyup="error_rem('main__form__1__pincode')">
                     <div class="error">This field cannot be empty</div>
                 </div>
 
             </div>
             <div class="main__form__2">
                 <div class="main__form__2__email">
-                    <label class="main__form__2__email__label">Email</label>
-                    <input class="main__form__2__email__input input_class" type="email" required placeholder="Enter email" onclick="error('main__form__2__email')" onkeyup="error_rem('main__form__2__email')">
+                    <label for="email" class="main__form__2__email__label">Email</label>
+                    <input id="email" class="main__form__2__email__input input_class" type="email" required placeholder="Enter email" onclick="error('main__form__2__email')" onkeyup="error_rem('main__form__2__email')">
                     <div class="error">This field cannot be empty</div>
                 </div>
                 <div class="main__form__2__phone">
-                    <label class="main__form__2__phone__label">Phone Number</label>
-                    <input class="main__form__2__phone__input input_class" type="tel" pattern="[0-9]{10}" required placeholder="Enter phone number" onclick="error('main__form__2__phone')" onkeyup="error_rem('main__form__2__phone')">
+                    <label for="phone" class="main__form__2__phone__label">Phone Number</label>
+                    <input id="phone" class="main__form__2__phone__input input_class" type="tel" pattern="[0-9]{10}" required placeholder="Enter phone number" onclick="error('main__form__2__phone')" onkeyup="error_rem('main__form__2__phone')">
                     <div class="error">This field cannot be empty</div>
                 </div>
 

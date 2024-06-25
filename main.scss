@@ -26,8 +26,6 @@ input, select{
 textarea{
     font-family: none;
 }
-
-
 .main{
     padding:5% 10%;
     &__heading{
@@ -39,13 +37,14 @@ textarea{
         width:100%;
         padding:0 0 25px;
         &__message{
+            margin:0 0 25px;
             &__label{
                 @include label();
             }
             &__wrap{
                 border:1px solid rgb(118, 118, 118);
                 border-radius: 5px;
-                margin:0 0 25px;
+                
                 &__subject{
                     border: none;
                     @include input(50px);
@@ -74,7 +73,7 @@ textarea{
             
         }
         &__name{
-            padding:0 0 25px;
+            margin:0 0 25px;
             &__label{
                 @include label();
             }
@@ -85,7 +84,7 @@ textarea{
         &__1{
             display: flex;
             gap:25px;
-            padding:0 0 25px;
+            margin:0 0 25px;
             &__country{
                 width: 50%;
                 &__label{
@@ -109,7 +108,7 @@ textarea{
         &__2{
             display: flex;
             gap:25px;
-            padding:0 0 25px;
+            margin:0 0 25px;
             &__email{
                 width: 50%;
                 &__label{
