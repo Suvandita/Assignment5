@@ -161,3 +161,166 @@ textarea{
     }
     
 }
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin label(){
+    display: block;
+    padding: 0 0 10px;
+}
+@mixin input($x){
+    width:100%;
+    padding:10px;
+    border-radius: 5px;
+    height: $x;
+}
+.error{
+    display: none;
+    color:red;
+}
+textarea:focus, input:focus, select:focus{
+    outline: none;
+}
+input, select{
+    border:1px solid rgb(118, 118, 118);
+}
+textarea{
+    font-family: none;
+}
+.main{
+    padding:5% 10%;
+    &__heading{
+        padding:0 0 25px;
+        width:100%;
+        font:50px bold black ;
+    }
+    &__form{
+        width:100%;
+        padding:0 0 25px;
+        &__message{
+            margin:0 0 25px;
+            &__label{
+                @include label();
+            }
+            &__wrap{
+                border:1px solid rgb(118, 118, 118);
+                border-radius: 5px;
+                
+                &__subject{
+                    border: none;
+                    @include input(50px);
+                    font-weight: bold;
+                    color:black;
+                    &::placeholder{
+                        color:black;
+                    }
+                    
+                }
+                hr{
+                    width:95%;
+                    border-top:1px solid rgb(118, 118, 118);
+                    margin: 0 auto;
+                }
+                &__input{
+                    border: none;
+                    @include input(150px);
+                }
+                .counter{
+                    width: 100%;
+                    text-align:right;
+                }
+            }
+            
+            
+        }
+        &__name{
+            margin:0 0 25px;
+            &__label{
+                @include label();
+            }
+            &__input{
+                @include input(50px);
+            }
+        }
+        &__1{
+            display: flex;
+            gap:25px;
+            margin:0 0 25px;
+            &__country{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input(50px);
+                }
+            }
+            &__pincode{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input(50px);
+                }
+            }
+
+        }
+        &__2{
+            display: flex;
+            gap:25px;
+            margin:0 0 25px;
+            &__email{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input(50px);
+                }
+            }
+            &__phone{
+                width: 50%;
+                &__label{
+                    @include label();
+                }
+                &__input{
+                    @include input(50px);
+                }
+            }
+
+        }
+        &__submit{
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border:1px solid rgb(118, 118, 118);
+            color:rgb(118, 118, 118);
+            border-radius: 5px;
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    .main{
+        &__form{
+            &__1{
+                flex-direction: column;
+                &__country,&__pincode{
+                    width:100%;
+                }
+            }
+            &__2{
+                flex-direction: column;
+                &__email,&__phone{
+                    width: 100%;
+                }
+            }
+
+        }
+        
+    }
+    
+}*/
